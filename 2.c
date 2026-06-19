@@ -18,7 +18,9 @@ int main(){
     printf("Tamanho do Vetor: ");
     scanf("%d",&n);
     int v[n];
+    printf("Preencha o Vetor.\n");
     for(int i=0;i<n;i++){
+        printf("V[%d]: ",i+1);
         scanf("%d",&v[i]);
     }
     int k;
