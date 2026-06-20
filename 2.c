@@ -8,14 +8,8 @@ void autobots(int *v,int tamK,int tamvet){
         *(v+i) = *(v+(tamvet-1)-i);
         *(v+(tamvet-1)-i) = aux;
     }
-   /*
-    printf("Vetor Invertido: ");
-    for(int i=0;i<tamvet;i++){
-        printf(" %d ", *(v+i));
-    }
-    printf("\n");
-    */
-    tamK %= tamvet;
+    //excluir a verificação de inversão
+    tamK %= tamvet; 
     for(int j=0;j<tamK;j++){
         int ultimo = *(v+tamvet-1);
         for (int i = tamvet -1; i>0; i--){
