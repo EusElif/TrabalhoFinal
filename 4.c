@@ -2,36 +2,35 @@
 #include <string.h>
 
 int main(){
-    int n,t;
-    char e[40];
+    int t;
+    char n[41];
     printf("Numero: ");
-    scanf("%d",&n);
+    scanf("%40s", n);
     printf("Quantidade de trocas: ");
     scanf("%d",&t);
-    if(n == 0 && t == 0){
+    if(strcmp(n, "0") == 0 && t == 0){
         printf("Não há trocas, tchau");//mudar frase
     }else{
-        sprintf(e, "%d", n);
         
-        for(int i = 0; e[i] != '\0' && t > 0; i++) {
+        for(int i = 0; n[i] != '\0' && t > 0; i++) {
             int posMaior = i;
 
             // procura maior direita
-            for(int j = i + 1; e[j] != '\0'; j++) {
-                if(e[j] > e[posMaior]) {
+            for(int j = i + 1; n[j] != '\0'; j++) {
+                if(n[j] > n[posMaior]) {
                     posMaior = j;
                 }
             }
 
             // encontrou? muda
             if(posMaior != i) {
-                char aux = e[i];
-                e[i] = e[posMaior];
-                e[posMaior] = aux;
+                char aux = n[i];
+                n[i] = n[posMaior];
+                n[posMaior] = aux;
                 t--;
             }
         }
-        printf("Resultado: %s\n", e);
+        printf("Resultado: %s\n", n);
     }
     return 0;
 }
